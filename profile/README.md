@@ -32,7 +32,7 @@
 ### 아키텍처
 
 <div align="center">
-  <img src="architecture.png" width="80%">
+  <img src="architecture2.png" width="80%">
 </div>
 
 ### ERD
