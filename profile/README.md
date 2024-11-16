@@ -1,11 +1,11 @@
-<img src="image/banner2.png">
+<img src="banner2.png">
 
 # 📦 중고 물품 실시간 경매 서비스
 
 ## 1. 프로젝트 개요
 **개발 기간:** 2024.10.21 ~ 2024.11.22
 
-`Auction_999` 는 사용자가 실시간으로 물품을 경매할 수 있는 Java Spring 기반의 중고 경매 사이트입니다. 사용자는 경매 등록, 입찰, 실시간 알림을 통해 다른 사용자와의 경쟁을 경험하며, Toss Pay를 통한 안전한 결제를 제공합니다.
+`All In Auction` 은 사용자가 실시간으로 물품을 경매할 수 있는 Java Spring 기반의 중고 경매 사이트입니다. 사용자는 경매 등록, 입찰, 실시간 알림을 통해 다른 사용자와의 경쟁을 경험하며, Toss Pay를 통한 안전한 결제를 제공합니다.
 
 <details>
   <summary><strong>Team Notion</strong></summary>
@@ -32,13 +32,13 @@
 ### 아키텍처
 
 <div align="center">
-  <img src="./image/architecture.png" width="80%">
+  <img src="architecture.png" width="80%">
 </div>
 
 ### ERD
 
 <div align="center">
-  <img src="./image/erd.png" width="80%">
+  <img src="erd.png" width="80%">
 </div>
 
 <br>
@@ -160,8 +160,8 @@ CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 
 - **도입 결과** : 여러 사용자가 동시에 쿠폰을 발급받으려 시도하더라도 동시성 제어에 성공하여, 정해진 수량만큼 정확하게 쿠폰이 발급됨을 확인했습니다.
 
 <div align="center">
-  <img src="./image/coupon1.png" width="45%" style="display: inline-block; margin-right: 10px;">
-  <img src="./image/coupon2.png" width="45%" style="display: inline-block;">
+  <img src="coupon1.png" width="45%" style="display: inline-block; margin-right: 10px;">
+  <img src="coupon2.png" width="45%" style="display: inline-block;">
 </div>
 
 
