@@ -5,7 +5,7 @@
 ## 1. 프로젝트 개요
 **개발 기간:** 2024.10.21 ~ 2024.11.22
 
-`All In Auction` 은 사용자가 실시간으로 물품을 경매할 수 있는 Java Spring 기반의 중고 경매 사이트입니다. 사용자는 경매 등록, 입찰, 실시간 알림을 통해 다른 사용자와의 경쟁을 경험하며, Toss Pay를 통한 안전한 결제를 제공합니다.
+`All In Auction` 은 사용자가 실시간으로 물품을 경매할 수 있는 Java Spring 기반의 중고 경매 사이트입니다. 사용자는 경매 등록, 입찰, 실시간 알림을 통해 다른 사용자와의 경쟁을 경험할 수 있으며, 대규모 트래픽에도 안정적인 입찰 및 쿠폰 발급이 가능하도록 설계되었습니다.
 
 <details>
   <summary><strong>Team Notion</strong></summary>
@@ -52,7 +52,7 @@
 
 ### **백엔드**
 
-<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white"> <img src="https://img.shields.io/badge/JPA-59666C?style=for-the-badge&logo=jpa&logoColor=white"> <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white"> <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white">
+<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white"> <img src="https://img.shields.io/badge/JPA-59666C?style=for-the-badge&logo=jpa&logoColor=white"> <img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white"> <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white"> ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) 
 
 ### **데이터베이스**
 
@@ -60,7 +60,7 @@
 
 ### **CI/CD**
 
-<img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white"> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+<img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white"> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"> ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 
 ### **클라우드 및 모니터링**
 
@@ -69,6 +69,10 @@
 ### **로그 관리**
 
 <img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white"> <img src="https://img.shields.io/badge/Logstash-005571?style=for-the-badge&logo=logstash&logoColor=white"> <img src="https://img.shields.io/badge/Kibana-005571?style=for-the-badge&logo=kibana&logoColor=white">
+
+### **협업 도구**
+
+![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) 
 
 <br>
 
@@ -83,7 +87,7 @@
             <b>팀장</b><br />
             <a href="https://github.com/devmoonjs" style="font-size: 16px;">문정석</a>
             <div style="margin-top: 5px; font-size: 14px;">
-              검색<br />경매<br />사용자<br />인프라
+              검색<br />경매<br />초기 인프라 구축<br />CQRS<br />MSA 전환(gRPC)
             </div>
           </div>
         </td>
@@ -93,7 +97,7 @@
             <b>부팀장</b><br />
             <a href="https://github.com/kim-na-ram" style="font-size: 16px;">김나람</a>
             <div style="margin-top: 5px; font-size: 14px;">
-              경매<br />모니터링 시스템<br />쿠폰 만료 처리 배치
+              경매<br />모니터링 시스템<br />쿠폰 만료 처리 배치<br />배치 서버 CI/CD<br />MSA 전환(OpenFeign)
             </div>
           </div>
         </td>
@@ -103,7 +107,7 @@
             <b>팀원</b><br />
             <a href="https://github.com/areum0116" style="font-size: 16px;">김아름</a>
             <div style="margin-top: 5px; font-size: 14px;">
-              경매<br />알림<br />검색<br />보증금 환불 배치
+              경매<br />알림<br />검색<br />환불 예외 보상 배치<br />Gateway, Eureka<br />Circuit Breaker
             </div>
           </div>
         </td>
@@ -113,7 +117,7 @@
             <b>팀원</b><br />
             <a href="https://github.com/inseooo0" style="font-size: 16px;">황인서</a>
             <div style="margin-top: 5px; font-size: 14px;">
-              결제<br />쿠폰<br />경매
+              결제<br />쿠폰<br />경매<br />동시성 제어<br />Terraform<br />CI/CD
             </div>
           </div>
         </td>
@@ -164,7 +168,7 @@ CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 
 
 ### 1-2. 입찰 기능 성능 향상 (gRPC 도입)
 
-- 기존 모놀리식 아키텍처에서 **MSA**로 전환하며 HTTP 1.1 &rarr; HTTP 2 &rarr; **gRPC**로 변경해 입찰 기능 성능을 한 번 더 개선.   
+- 기존 모놀리식 아키텍처에서 **MSA**로 전환하며 OpenFeign &rarr; **gRPC**로 변경해 입찰 기능 성능을 한 번 더 개선.   
 - JSON &rarr; **Protobuf**를 통한 데이터 직렬화로 전송 속도를 향상.   
 
 #### 📊 gRPC 도입 전후 성능 비교
@@ -193,9 +197,9 @@ CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 
 </div>
 <br>
 
-HTTP 1.1에서 HTTP 2, gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적용해 요청 속도를 약 45% 개선하며 안정적인 경매 입찰 환경을 구현했다.
+OpenFeign에서 gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적용해 요청 속도를 약 45% 개선하며 안정적인 경매 입찰 환경을 구현했다.
 
-<br>
+------
 
 ### 2. 쿠폰 발급 동시성 처리 (분산락 및 Lua 스크립트 적용)
 
@@ -209,7 +213,7 @@ HTTP 1.1에서 HTTP 2, gRPC로 전환하고 Protobuf 기반 데이터 직렬화�
   <img src="coupon2.png" width="45%" style="display: inline-block;">
 </div>
 
-<br>
+-------
 
 ### 3. 만료된 쿠폰 처리 (스프링 배치)
 
@@ -244,9 +248,60 @@ HTTP 1.1에서 HTTP 2, gRPC로 전환하고 Protobuf 기반 데이터 직렬화�
   <img src="batch_output.png" width="50%">
 </div>
 
-<br>
+------
 
-<details>
-  <summary><strong>기술적 의사결정</strong></summary>
-  <p>  <a href="https://proximal-chance-603.notion.site/Auction999-136bcf97d36a80d89cabf92fa8032236">기술적 의사결정</a></p>
-</details>
+### 4. MSA 전환 후 장애 대응 및 오류 전파 방지 
+
+
+------
+
+### 5. 검색 성능 향상 (Elasticsearch 도입)
+
+#### 💡 성능 개선 요약  
+
+- **평균 응답 시간** : 78241ms → 403ms로 약 `98% 감소`
+- **처리량 (Throughput)** : 6.4 요청/초 → 340.8 요청/초로 약 `53배 개선`
+
+#### 문제점
+
+- 상품 검색 시 평균 2분 37초라는 굉장히 긴 시간이 소요되었다.
+- 인덱싱 적용에도 불구하고 `LIKE %___%`를 사용하는 방식으로 인해 **Full Table Scan**이 발생하며 성능이 개선되지 않았다.
+- 검색어와 완전히 일치하지 않으면 결과를 반환하지 못했다.
+
+#### 해결 방안
+
+**1. Elasticsearch 도입**  
+  역 인덱스(Inverted Index) 구조를 활용해 검색 속도를 대폭 향상
+
+**2. Nori Analyzer 사용**   
+  한국어 형태소 분석기를 도입해 검색어를 형태소 단위로 분해하고 불용어를 제거해 정확한 검색 결과를 제공
+
+**3. 가중치 및 Fuzziness 설정**   
+  검색어와 가장 관련성 높은 결과가 우선 출력되도록 필드별 가중치를 설정하고 오타나 부분 일치 검색이 가능하도록 Fuzziness를 활성화
+
+**4. 인덱스 설계 최적화**   
+  도메인의 데이터 구조에 따라 필드 타입을 지정하고 매핑을 최적화해 효율적인 데이터 검색을 구현
+
+#### 📊 ES 도입 전후 성능 비교
+시나리오 상황 : 유저 1000명이 300만 건의 상품을 검색한다.
+#### 도입 전 성능 테스트 결과
+
+| 구분      | 표본 수 | 평균 (ms) | 최소값 (ms) | 최대값 (ms) | 표준편차 | 오류 % | 초당 요청 수 | 수신 KB/초 | 전송 KB/초 | 평균 바이트 수 |
+|-----------|---------|-----------|-------------|-------------|----------|--------|--------------|------------|------------|---------------|
+| HTTP 요청 | 1000    | 78241      | 2933       | 154075      | 43697.74  | 10.20%  | 6.4/sec    | 15.82      | 2.52       | 2544.0         |
+| **총계**  | **1000**| **78241**  | **2933**   | **154075**  | **43697.74**| **10.20%** | **6.4/sec** | **15.82**  | **2.52**  | **2544.0** |
+
+#### 도입 후 성능 테스트 결과
+
+| 구분      | 표본 수 | 평균 (ms) | 최소값 (ms) | 최대값 (ms) | 표준편차 | 오류 % | 초당 요청 수 | 수신 KB/초 | 전송 KB/초 | 평균 바이트 수 |
+|-----------|---------|-----------|-------------|-------------|----------|--------|--------------|------------|------------|---------------|
+| HTTP 요청 | 1000    | 403       | 6           | 799         | 248.18   | 0.00%  | 340.8/sec    | 743.57     | 137.49     | 2234.0        |
+| **총계**  | **1000**| **403**   | **6**       | **799**    | **248.18**| **0.00%** | **340.8/sec** | **743.57**  | **137.49**  | **2234.0**  |
+
+<div align="center">
+  <img src="es_output.png" width="50%">
+</div>
+
+------
+
+<h3>5. <a href="https://spectacled-plastic-a9d.notion.site/145df15aae15809cb1cad825e0a8364c?pvs=4">기술적 의사결정</a></h3>
