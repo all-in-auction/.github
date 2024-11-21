@@ -12,6 +12,11 @@
   <p>  <a href="https://teamsparta.notion.site/999-1232dc3ef51480e2a3adc7c23fdd3a40">팀 노션</a></p>
 </details>
 
+<details>
+  <summary><strong>Team Notion</strong></summary>
+  <p>  <a href="https://all-in-auction.com">배포 URL</a></p>
+</details>
+
 ### 서비스 플로우
 
 1. **경매 물품 등록**  
@@ -47,6 +52,8 @@
 </div>
 
 <br>
+
+
 
 ## 2. 주요 기술 스택
 
@@ -129,7 +136,9 @@
 
 <br>
 
-## 4. 트러블 슈팅 & 최적화 전략
+<h2>4. <a href="https://spectacled-plastic-a9d.notion.site/145df15aae15809cb1cad825e0a8364c?pvs=4">기술적 의사결정</a></h2>
+
+## 5. 트러블 슈팅 & 최적화 전략
 
 ### 1-1. 입찰 기능 성능 향상 (CQRS 도입)
 
@@ -229,11 +238,11 @@ OpenFeign에서 gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적�
 
 #### 해결 방안
 
-**1. Writer 변경**
+**3-1. Writer 변경**
   - `JPAItemWriter`에서 `JDBCBatchItemWriter`로 변경
   - Chunk Size만큼 데이터를 모아 DB로 한 번에 전달해 **통신 횟수 감소**
 
-**2. Projection 적용**
+**3-2. Projection 적용**
   - Reader에서 필요한 컬럼만 조회하도록 **쿼리 최적화**
 
 <br>
@@ -250,8 +259,26 @@ OpenFeign에서 gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적�
 
 ------
 
-### 4. MSA 전환 후 장애 대응 및 오류 전파 방지 
+### 4. MSA 전환 후 장애 대응 및 오류 전파 방지 (Circuit Breaker 사용)
 
+#### 문제점
+
+- MSA 환경 전환으로 인해 서비스 간 의존성이 증가하였다.
+- 장애 발생 시 오류 전파로 인해 다른 서비스까지 **연쇄 장애**가 발생할 가능성이 있다.
+
+#### 해결 방안
+
+4-1. **Resilience4J**를 활용해 서비스 연쇄 장애 방지 및 MSA 환경에서의 안정적인 서비스 구축   
+4-2. 임계치 초과 시 **호출을 차단(OPEN)** 하고, 문제가 있는 서비스로의 추가 요청 차단    
+4-3. **Fallback 메서드**를 통한 서비스 대체 동작 구현 및 서비스의 완전한 장애 방지   
+
+<br>
+
+**[Before]**    
+<img src="circuit_breaker1.png" width="80%">    
+
+**[After]**   
+<img src="circuit_breaker2.png" width="80%">   
 
 ------
 
@@ -270,16 +297,16 @@ OpenFeign에서 gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적�
 
 #### 해결 방안
 
-**1. Elasticsearch 도입**  
+**5-1. Elasticsearch 도입**  
   역 인덱스(Inverted Index) 구조를 활용해 검색 속도를 대폭 향상
 
-**2. Nori Analyzer 사용**   
+**5-2. Nori Analyzer 사용**   
   한국어 형태소 분석기를 도입해 검색어를 형태소 단위로 분해하고 불용어를 제거해 정확한 검색 결과를 제공
 
-**3. 가중치 및 Fuzziness 설정**   
+**5-3. 가중치 및 Fuzziness 설정**   
   검색어와 가장 관련성 높은 결과가 우선 출력되도록 필드별 가중치를 설정하고 오타나 부분 일치 검색이 가능하도록 Fuzziness를 활성화
 
-**4. 인덱스 설계 최적화**   
+**5-4. 인덱스 설계 최적화**   
   도메인의 데이터 구조에 따라 필드 타입을 지정하고 매핑을 최적화해 효율적인 데이터 검색을 구현
 
 #### 📊 ES 도입 전후 성능 비교
@@ -304,4 +331,24 @@ OpenFeign에서 gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적�
 
 ------
 
-<h3>5. <a href="https://spectacled-plastic-a9d.notion.site/145df15aae15809cb1cad825e0a8364c?pvs=4">기술적 의사결정</a></h3>
+### 6. 보증금 환불 시 카프카 예외 처리
+
+#### 6-1. 트랜잭션 롤백 처리로 데이터 일관성 확보
+- Kafka 프로듀서에 `Transactional ID`를 부여, 메시지 발송과 서비스 단의 데이터베이스 트랜잭션을 **하나의 작업 단위**로 묶음.
+- 이를 통해 데이터 손실 및 중복 처리 방지 가능. 메시지의 Exactly Once 전송 보장.
+
+#### 6-2. ACKS_CONFIG 설정으로 메시지 저장 신뢰성 강화
+- `acks=all` 옵션을 활성화하여 모든 replication의 broker가 메시지를 정상적으로 저장했음을 확인한 후에만 메시지가 처리되도록 설정.
+- 이를 통해 메시지 손실 가능성을 줄이고 **강한 내구성(durability)** 보장.
+
+#### 6-3. CustomErrorHandler와 DLT(Dead Letter Topic) 도입
+- 예외로 인한 소비 실패 메시지들의 누락 방지를 위해 **Custom ErrorHandler** 구현, 예외 상황 세부적으로 관리.
+- 실패한 메시지를 별도의 **Dead Letter Topic(DLT)** 에 저장하도록 구성하여 이후 관리자나 별도 프로세스를 통해 **문제 추적 및 재처리** 가능하도록 설정.
+
+#### 6-4. 예외 발생 시 관리자 Slack 알림 전송
+- **실시간 문제 모니터링**과 **안정성 유지**를 위해 Slack API 연동, 예외 케이스 발생 시 관리자 채널로 알림 발송하도록 설정.
+
+#### 6-5. 적절한 파티션 수 설정으로 처리량 최적화
+- Kafka Topic의 파티션 개수를 입찰 요청량과 소비자의 처리 속도에 맞춰 적절히 설정.
+- Consumer 인스턴스와 병렬 처리를 고려하여 계산, 이를 통해 **로드 밸런싱**을 극대화하고 메시지 처리 지연을 최소화.
+
