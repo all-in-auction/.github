@@ -153,6 +153,10 @@
 - **오류율** : 0.20% → 0.10%로 절반 감소
 - **처리량 (Throughput)** : 61.4 요청/초 → 89.0 요청/초로 약 `45% 증가`
 
+<div align="center">
+  <img src="cqrs_output.png" width="50%">
+</div>
+
 CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 경매 서비스의 응답 속도와 처리 성능을 크게 개선했다다. 이를 통해 실시간 경매 환경에서 높은 성능과 안정성을 확보할 수 있었다.
 
 <br>
@@ -160,7 +164,7 @@ CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 
 ### 1-2. 입찰 기능 성능 향상 (gRPC 도입)
 
 - 기존 모놀리식 아키텍처에서 **MSA**로 전환하며 HTTP 1.1 &rarr; HTTP 2 &rarr; **gRPC**로 변경해 입찰 기능 성능을 한 번 더 개선.   
-- Protobuf를 통한 데이터 직렬화로 전송 속도를 향상.   
+- JSON &rarr; **Protobuf**를 통한 데이터 직렬화로 전송 속도를 향상.   
 
 #### 📊 gRPC 도입 전후 성능 비교
 시나리오 상황 : 유저 1000명이 동시에 경매 한 건을 입찰한다.
@@ -182,6 +186,10 @@ CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 
 
 - **평균 응답 시간** : 8208ms → 4428ms로 약 `45% 감소`
 - **처리량 (Throughput)** : 56.3 요청/초 → 89.5 요청/초로 약 `59% 증가`
+
+<div align="center">
+  <img src="grpc_output.png" width="50%">
+</div>
 
 HTTP 1.1에서 HTTP 2, gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적용해 요청 속도를 약 45% 개선하며 안정적인 경매 입찰 환경을 구현했다.
 
@@ -225,6 +233,9 @@ HTTP 1.1에서 HTTP 2, gRPC로 전환하고 Protobuf 기반 데이터 직렬화�
 <div align="center">
   <img src="batch1.png" width="45%" style="display: inline-block; margin-right: 10px;">
   <img src="batch2.png" width="45%" style="display: inline-block;">
+</div>
+<div align="center">
+  <img src="batch_output.png" width="50%">
 </div>
 
 
