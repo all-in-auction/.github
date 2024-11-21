@@ -156,6 +156,7 @@
 <div align="center">
   <img src="cqrs_output.png" width="50%">
 </div>
+<br>
 
 CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 경매 서비스의 응답 속도와 처리 성능을 크게 개선했다다. 이를 통해 실시간 경매 환경에서 높은 성능과 안정성을 확보할 수 있었다.
 
@@ -188,8 +189,9 @@ CQRS 패턴을 통해 **읽기 작업** 과 **쓰기 작업** 을 분리하여, 
 - **처리량 (Throughput)** : 56.3 요청/초 → 89.5 요청/초로 약 `59% 증가`
 
 <div align="center">
-  <img src="grpc_output.png" width="50%">
+  <img src="gRPC_output.png" width="50%">
 </div>
+<br>
 
 HTTP 1.1에서 HTTP 2, gRPC로 전환하고 Protobuf 기반 데이터 직렬화를 적용해 요청 속도를 약 45% 개선하며 안정적인 경매 입찰 환경을 구현했다.
 
@@ -230,14 +232,19 @@ HTTP 1.1에서 HTTP 2, gRPC로 전환하고 Protobuf 기반 데이터 직렬화�
 **2. Projection 적용**
   - Reader에서 필요한 컬럼만 조회하도록 **쿼리 최적화**
 
-<div align="center">
-  <img src="batch1.png" width="45%" style="display: inline-block; margin-right: 10px;">
-  <img src="batch2.png" width="45%" style="display: inline-block;">
-</div>
+<br>
+
+**[Before]**   
+<img src="batch1.png" width="80%">
+
+**[After]**   
+<img src="batch2.png" width="80%">   
+
 <div align="center">
   <img src="batch_output.png" width="50%">
 </div>
 
+<br>
 
 <details>
   <summary><strong>기술적 의사결정</strong></summary>
