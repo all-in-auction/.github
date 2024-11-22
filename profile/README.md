@@ -301,7 +301,7 @@
 <img src="batch3.png" width="80%">
 
 <br>
-<img src="batch_output.png" width="50%">
+<img src="batch_output.png" width="25%">
 <!-- (수정) -->
 <br>
 
