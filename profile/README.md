@@ -111,13 +111,17 @@
 4. **경매 종료 및 낙찰**  
    정해진 만료 시간이 지나면 경매가 종료되며, 최고 입찰자가 `최종 낙찰자로 확정` 됩니다.
 
+<br>
 
 ### [경매 입찰 로직]    
+<div align="center">
 <img src="flowchart.png" width="80%">
-
+</div>
 
 ### [쿠폰 로직]
+<div align="center">
 <img src="flowchart2.png" width="80%">
+</div>
 
 <br>
 
@@ -251,6 +255,9 @@
 - **처리량**: 333.6 요청/초 → 743.2 요청/초 (약 `122.8% 증가`)
 
 <br>
+
+<img src="coupon_output.png" width="50%">
+
 <div align="center">
   <img src="coupon1.png" width="45%" style="display: inline-block; margin-right: 10px;">
   <img src="coupon2.png" width="40%" style="display: inline-block;">
