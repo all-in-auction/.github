@@ -258,9 +258,9 @@
 
 <img src="coupon_output.png" width="50%">
 
-<div align="center">
-  <img src="coupon1.png" width="45%" style="display: inline-block; margin-right: 10px;">
-  <img src="coupon2.png" width="40%" style="display: inline-block;">
+<div align="left">
+  <img src="coupon1.png" width="40%" style="display: inline-block; margin-right: 10px;">
+  <img src="coupon2.png" width="35%" style="display: inline-block;">
 </div>
 <br>
 
